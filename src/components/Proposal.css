@@ -1,0 +1,26 @@
+
+.proposal-body {
+  margin: 20px 20px;
+  border: 1px solid lightslategray;
+}
+
+.logo {
+  display: block;
+  margin: 24px auto;
+  width: 84px;
+}
+
+.date {
+  color: lightgray;
+}
+
+.from-to {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.intro {
+  margin: 18px 22px;
+  text-align: justify;
+}
