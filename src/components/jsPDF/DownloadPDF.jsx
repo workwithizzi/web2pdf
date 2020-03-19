@@ -3,8 +3,15 @@ import * as jsPDF from "jspdf";
 
 function DownloadPDF(props) {
 	const content = React.createRef();
-	function downloadPDF() {
-		const doc = new jsPDF();
+	function getPDF() {
+		const doc = new jsPDF("p", "px", "a4");
+
+		const margin = {
+			top: 0,
+			left: 0,
+			right: 0,
+			bottom: 0,
+		};
 
 		//This will eliminate html which you don't want to convert into pdf.
 		const specialElementHandlers = {
@@ -20,11 +27,19 @@ function DownloadPDF(props) {
 		 * y-axis (Number): coordinate starting from y (i.e. from top)
 		 * settings (Object): Optional/ Additional variables .
 		 */
-		doc.fromHTML(content.current.innerHTML, 20, 10, {
-			"width": 170,
-			"elementHandlers": specialElementHandlers,
-		});
-		doc.save("file.pdf");
+		doc.fromHTML(
+			content.current.innerHTML,
+			0,
+			0,
+			{
+				"width": 400,
+				"elementHandlers": specialElementHandlers,
+			},
+			function() {
+				doc.save("proposal.pdf");
+			},
+			margin
+		);
 	}
 
 	return (
@@ -32,7 +47,7 @@ function DownloadPDF(props) {
 			<div id="content" ref={content}>
 				{props.children}
 			</div>
-			<button onClick={downloadPDF}>Download PDF</button>
+			<button onClick={getPDF}>Download PDF</button>
 		</>
 	);
 }

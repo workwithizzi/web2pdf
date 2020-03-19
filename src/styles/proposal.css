@@ -7,7 +7,8 @@
 .logo {
   display: block;
   margin: 24px auto;
-  width: 84px;
+  width: 84px !important;
+  height: 84px !important;
 }
 
 .date {

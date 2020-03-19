@@ -1,13 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import "../styles/proposal.css";
-import logo from "../images/izzi-logo@2x.png";
+import "../../styles/proposal.css";
+import logo from "../../images/izzi-logo@2x.png";
+
+// Convert Image to the base64
+function toDataURL(src, callback, outputFormat) {
+
+	const img = new Image();
+	img.crossOrigin = "Anonymous";
+	img.onload = function() {
+		const canvas = document.createElement("CANVAS");
+		const ctx = canvas.getContext("2d");
+		canvas.height = this.naturalHeight;
+		canvas.width = this.naturalWidth;
+		ctx.drawImage(this, 0, 0, canvas.width, canvas.height);
+		const dataURL = canvas.toDataURL(outputFormat);
+		callback(dataURL);
+	};
+	img.src = src;
+	if (img.complete || img.complete === undefined) {
+		img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+		img.src = src;
+	}
+}
 
 function Proposal({ title, date }) {
+
+	const [logoBase64, setLogoBase64] = useState("");
+
+	useEffect(() => {
+		toDataURL(
+			logo,
+			function(dataUrl) {
+				setLogoBase64(dataUrl);
+			}
+		);
+	}, []);
+
 	return (
 		<div className="proposal-body">
 			<div>
-				<img className="logo" src={logo} alt="IZZI Logo" />
+				<img style={{ width: "54px", height: "54px" }} className="logo" src={logoBase64} alt="IZZI Logo" />
 				<h1>{title}</h1>
 				<p className="date">Sent <span>{date}</span></p>
 			</div>
@@ -31,9 +64,9 @@ function Proposal({ title, date }) {
 			<div className="intro">
 				<p>Hi Lindsey,
 					<br />
-          It was great speaking with you about the needs your business has for a new website. As hard as you have worked to showcase your professional image to the local community, we want to work hard and build a custom website to match.
+					It was great speaking with you about the needs your business has for a new website. As hard as you have worked to showcase your professional image to the local community, we want to work hard and build a custom website to match.
 					<br />
-          I've put together some information about our process, recommendations, pricing and timeline for the project so that you would understand how we work and be able to make the best decision for your business! If you have any questions while you are going through it, you can let us know by commenting right here in the proposal. You can also email or call us too if you prefer!
+					I've put together some information about our process, recommendations, pricing and timeline for the project so that you would understand how we work and be able to make the best decision for your business! If you have any questions while you are going through it, you can let us know by commenting right here in the proposal. You can also email or call us too if you prefer!
 				</p>
 			</div>
 			<hr />
