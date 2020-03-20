@@ -9,6 +9,8 @@
 - Implementation of the `Web API print()` method, using the component `Proposal.jsx`.
 
 # md-to-pdf (`md-to-pdf.jsx` or `/md-to-pdf`)
+- Rename `samples.env` -> `.env` and specify the name of the folder for PDF conversion.
 - Make sure to run `yarn run make:pdf` first.
-- The content is not ready yet. Just a bold example.
 - Put the image to the `templates` folder as having problems with accessing `/image` directory.
+- Currently only 1 pdf can be generated.
+- Specify the name of the proposal folder `PROPOSAL_NAME` in the `.env` file.

@@ -3,19 +3,17 @@ import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Header from "../components/Header";
-import downloadFile from "../../pdf_converter/out/output.pdf";
+import ProposalsBlock from "../components/md-to-pdf/ProposalsBlock";
 
-const IndexPage = () => {
+const MdToPdfPage = () => {
 
 	return (
 		<Layout>
 			<SEO title="Home" />
 			<Header />
-			<a href={downloadFile} download>Download</a>
+			<ProposalsBlock />
 		</Layout>
 	);
 };
 
-	
-
-export default IndexPage;
+export default MdToPdfPage;
