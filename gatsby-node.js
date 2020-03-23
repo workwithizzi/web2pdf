@@ -32,6 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
 					component: path.resolve(`./src/components/md-to-pdf/ProposalTemplate.jsx`),
 					context: {
 						slug: node.frontmatter.slug,
+						name: node.frontmatter.slug.split("/")[1],
 					},
 				});
 			});

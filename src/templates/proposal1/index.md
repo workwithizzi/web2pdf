@@ -1,5 +1,6 @@
 ---
 slug: "/proposal1"
+title: "Design & Development Proposal 1"
 css: ""
 pdf_options:
   format: A4
@@ -27,7 +28,7 @@ pdf_options:
 
 ![IZZI logo](izzi-logo@2x.png)
 
-# Design & Development Proposal
+# Design & Development Proposal 1
 
 Sent July 23, 2019
 

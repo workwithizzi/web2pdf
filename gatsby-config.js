@@ -16,9 +16,9 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				name: `posts`,
+				name: `templates`,
 				path: `${__dirname}/src/templates/`,
-				ignore: [`**/.*`, `**/.pdf`], // ignore files starting with a dot and pdf
+				ignore: [`**/.*`], // ignore files starting with a dot and pdf
 			},
 		},
 		`gatsby-transformer-sharp`,

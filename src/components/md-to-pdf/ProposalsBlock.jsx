@@ -9,6 +9,7 @@ const GET_PROPOSALS = graphql`
 					excerpt
 					frontmatter {
 						slug
+						title
 					}
 				}
 			}
@@ -26,7 +27,6 @@ function ProposalsBlock() {
 					<Link to={`/proposals${edge.node.frontmatter.slug}`}>
 						<h2>{edge.node.frontmatter.title}</h2>
 					</Link>
-					<p>{edge.node.frontmatter.date}</p>
 					<p>{edge.node.excerpt}</p>
 					<Link to={`/proposals${edge.node.frontmatter.slug}`}>Read More</Link>
 				</article>
