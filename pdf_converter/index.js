@@ -7,7 +7,7 @@ const listDirectories = require("./listDirectories");
 
 (async() => {
 	try {
-		// Directory that contains directoried with `md` files that are going to be converted into PDFs.
+		// Directory that contains directories with `md` files that are going to be converted into PDFs.
 		const templatesDir = "src/templates/";
 
 		// Get `fs.Dirent` object: https://nodejs.org/api/fs.html#fs_class_fs_dirent
