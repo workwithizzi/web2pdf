@@ -15,7 +15,7 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-remark": "^2.7.0",
     "gatsby-transformer-sharp": "^2.3.13",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "md-to-pdf": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
